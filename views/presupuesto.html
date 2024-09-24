@@ -27,24 +27,25 @@
     </nav>
 
     <!--datos de contacto-->
-	<h2>Formulario de Presupuesto</h2>
+    <h2>Formulario de Presupuesto</h2>
     <form id="formularioPresupuesto">
         <h3>Datos de Contacto</h3>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" maxlength="15" required><br><br>
-        
+        <input type="text" id="nombre" name="nombre" maxlength="15" required>
+
         <label for="apellidos">Apellidos:</label>
-        <input type="text" id="apellidos" name="apellidos" maxlength="40" required><br><br>
-        
+        <input type="text" id="apellidos" name="apellidos" maxlength="40" required>
+
         <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" maxlength="9" required><br><br>
-        
+        <input type="tel" id="telefono" name="telefono" maxlength="9" required>
+
         <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required>
 
         <h3>Presupuesto</h3>
         <label for="producto">Producto:</label>
         <select id="producto" name="producto">
+        <option value="" disabled selected>Seleccione un Producto</option>
         <option value="70">Bate Nike - 70€</option>
         <option value="60">Botas Adidas - 60€</option>
         <option value="1200">Mesa de Billar - 1200€</option>
@@ -53,24 +54,28 @@
         <option value="60">Raqueta de Padel - 60€</option>
         <option value="70">Taco de Billar - 70€</option>
         <option value="130">Mesa de Billar - 130€</option>
-        </select><br><br>
+        </select>
         
         <label for="plazo">Plazo (días):</label>
-        <input type="number" id="plazo" name="plazo" min="1" max="5" value="1"><br><br>
+        <input type="number" id="plazo" name="plazo" min="1" max="5" value="1">
         
-        <label>Extras:</label><br>
-        <input type="checkbox" id="extra1" name="extras" value="50"> Kit de Principiante - 50€<br>
-        <input type="checkbox" id="extra2" name="extras" value="100"> Kit Amateur - 100€<br>
-        <input type="checkbox" id="extra3" name="extras" value="300"> Kit Profesional - 300€<br><br>
-        
+        <label>Extras:</label>
+        <select name="extras">
+            <option type="checkbox" id="extra1" name="extras" value="0"> Sin Extras</option>
+            <option type="checkbox" id="extra1" name="extras" value="50"> Kit de Principiante - 50€</option>
+            <option type="checkbox" id="extra2" name="extras" value="100"> Kit Amateur - 100€</option>
+            <option type="checkbox" id="extra3" name="extras" value="300"> Kit Profesional - 300€</option>
+        </select>
+
         <label for="presupuestoFinal">Presupuesto Final:</label>
-        <output id="presupuestoFinal">0€</output><br><br>
+        <output id="presupuestoFinal">0€</output>
 
-        <input type="checkbox" id="condiciones" required>
-        <label for="condiciones">Acepto las condiciones de privacidad.</label><br><br>
+        <div class="checkbox-condiciones">
+            <input type="checkbox" id="condiciones" required>
+            <label for="condiciones">Acepto las condiciones de privacidad.</label>
+        </div>
 
-        <button type="button" onclick="calcularPresupuesto()">Calcular Presupuesto</button>
-        <button type="button" onclick="resetearFormulario()">Resetear Formulario</button>
+        
         <button type="submit" onclick="enviarPresupuesto()">Enviar Presupuesto</button>
     </form>
 
